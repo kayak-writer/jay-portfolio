@@ -1,3 +1,5 @@
+<meta name="robots" content="noindex, nofollow">
+
 # Jay's Technical Writing Portfolio
 
 Welcome to my technical writing portfolio! I am a technical writer focused on documenting complex Software-as-a-Service (SaaS) platforms for sophisticated audiences. The portfolio includes:
