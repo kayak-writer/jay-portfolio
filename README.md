@@ -6,7 +6,8 @@ Welcome to my technical writing portfolio! I am a technical writer focused on do
 
 * [Product Announcements](#product-announcements)
 * [Help Center Page](#help-center-page)
-* [Side Projects](#side-projects)
+* [Job Finder API](#job-finder-api)
+* [Chase The Split Docs](#chase-the-split-docs)
 
 ## Product Announcements
 
@@ -24,7 +25,13 @@ This help center page highlights a report available within complex financial mar
 
 [Cellular Infrastructure Shipments](Cellular_Infrastructure_Shipments_OA_Page.pdf)
 
-## Side Projects
+## Job Finder API
+
+I created an API with Replit's AI agent to aggregate job listings for technical writing, developer relations, and related roles. 
+
+[Job Finder API README](API_README.md)
+
+## Chase The Split Docs
 
 I built Chase The Split to analyze my workouts by creating charts and tables out of my logbook from my Concept2 rowing data. I coded the app with Replit's AI agent and built a knowledge base using static GitHub Pages and Docusaurus.
 
