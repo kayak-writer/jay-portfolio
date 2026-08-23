@@ -86,6 +86,6 @@ Job listings are refreshed periodically when a scrape runs. Use `GET /api/v1/sta
 
 ## Contact
 
-For API access, questions, or feedback, contact ` jay@technicalwriting.io `.
+For API access, questions, or feedback, contact `jay@technicalwriting.io`.
 
 
