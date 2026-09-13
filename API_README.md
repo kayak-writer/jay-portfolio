@@ -80,7 +80,7 @@ Job Finder's public API lets you retrieve current job listings, review statistic
 | `sortBy` | string | "postedAt" | Sort by "postedAt", "scrapedAt", or "company" |
 | `sortOrder` | string | "desc" | Sort order: "asc" or "desc" |
 
-**Example Request (Remote technical writing jobs):**
+**Example Request (Technical Writer roles that offer remote work):**
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -88,7 +88,9 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 
 **Response**
 
-```{"jobs": [
+```json
+{
+    "jobs": [
         {
             "id": 338,
             "title": "Technical Writer ",
@@ -147,6 +149,23 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
     "pageSize": 50
 }
 ```
+
+**More Examples:**
+
+Filter by Platform (Hacker News only)
+```bash
+curl
+"https://job-scraper.replit.app/api/v1/jobs?platform=hackernews&pageSize=10 \
+-H "X-API-Key: YOUR_API_KEY"
+```
+
+Filter by Location and company
+``` bash
+curl
+"https://job-scraper.replit.app/api/v1/jobs?location=Boston&company=Starburst \
+```
+
+---
 
 ## Errors
 
