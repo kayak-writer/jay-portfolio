@@ -66,6 +66,88 @@ Job Finder's public API lets you retrieve current job listings, review statistic
 | GET | `/api/v1/status` | Check the aggregator's latest run. |
 | GET | `/api/v1/openapi.json` | Download the API definition. |
 
+**Query Parameters:**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `page` | integer | 1 | Page number for pagination |
+| `pageSize` | integer | 20 | Number of results per page (max 100) |
+| `searchTerm` | string | — | Filter by job title or keywords (e.g., "technical writing") |
+| `location` | string | — | Filter by location (e.g., "Remote", "New York, NY") |
+| `platform` | string | — | Filter by source platform (e.g., "hackernews", "remoteok") |
+| `company` | string | — | Filter by company name |
+| `isRemote` | boolean | — | Filter to remote-only jobs (`true` or `false`) |
+| `sortBy` | string | "postedAt" | Sort by "postedAt", "scrapedAt", or "company" |
+| `sortOrder` | string | "desc" | Sort order: "asc" or "desc" |
+
+**Example Request (Remote technical writing jobs):**
+```bash
+curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
+-H "X-API-Key: YOUR_API_KEY"
+```
+
+**Response**
+
+```{"jobs": [
+        {
+            "id": 338,
+            "title": "Technical Writer ",
+            "company": "deepnote",
+            "platform": "ashby",
+            "location": "Remote — USA",
+            "isRemote": true,
+            "salaryRaw": null,
+            "url": "https://jobs.ashbyhq.com/deepnote/eb00d9b0-0dfc-4ff7-9aa4-19cf22e9644c",
+            "postedAt": "2026-03-20T17:30:39.706Z",
+            "scrapedAt": "2026-08-25T04:23:46.280Z",
+            "searchTerm": "technical writer"
+        },
+        {
+            "id": 687,
+            "title": "Senior Technical Writer (Data Documentation)",
+            "company": "jetbrains",
+            "platform": "greenhouse",
+            "location": "Belgrade, Serbia; Berlin, Germany; Limassol, Cyprus; Madrid, Spain; Munich, Germany; Paphos, Cyprus; Prague, Czech Republic; Remote, Germany; Warsaw, Poland; Yerevan, Armenia",
+            "isRemote": true,
+            "salaryRaw": null,
+            "url": "https://job-boards.eu.greenhouse.io/jetbrains/jobs/4860224101",
+            "postedAt": "2026-08-20T16:59:01.000Z",
+            "scrapedAt": "2026-08-25T04:23:40.080Z",
+            "searchTerm": "technical writer"
+        },
+        {
+            "id": 545,
+            "title": "Technical Writer",
+            "company": "pantheon",
+            "platform": "greenhouse",
+            "location": "United States (Remote)",
+            "isRemote": true,
+            "salaryRaw": null,
+            "url": "https://pantheon.io/about/careers/detail?gh_jid=8077481",
+            "postedAt": "2026-07-31T15:29:15.000Z",
+            "scrapedAt": "2026-08-06T03:01:50.464Z",
+            "searchTerm": "technical writer"
+        },
+        {
+            "id": 471,
+            "title": "Technical Writer, Docs Content",
+            "company": "stripe",
+            "platform": "greenhouse",
+            "location": "US Remote",
+            "isRemote": true,
+            "salaryRaw": null,
+            "url": "https://stripe.com/jobs/search?gh_jid=8036155",
+            "postedAt": "2026-08-05T17:44:32.000Z",
+            "scrapedAt": "2026-08-06T03:01:50.310Z",
+            "searchTerm": "technical writer"
+        }
+    ],
+    "total": 4,
+    "page": 1,
+    "pageSize": 50
+}
+```
+
 ## Errors
 
 | Status Code | Error Code | Meaning |
