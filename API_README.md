@@ -152,17 +152,18 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 
 **More Examples:**
 
-Filter by Platform (Hacker News only)
+Filter by Platform (Hacker News only):
 ```bash
 curl
 "https://job-scraper.replit.app/api/v1/jobs?platform=hackernews&pageSize=10 \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
-Filter by Location and company
+Filter by Location and Company:
 ``` bash
 curl
 "https://job-scraper.replit.app/api/v1/jobs?location=Boston&company=Starburst \
+-H "X-API-Key: YOUR_API_KEY"
 ```
 
 ---
