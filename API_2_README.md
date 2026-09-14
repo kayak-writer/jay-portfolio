@@ -125,3 +125,34 @@ A sucessfull response contains a hotels array:
 }
 
 ```
+
+### Endpoints
+
+RowFinder allows you to retrieve listings of hotels with rowing machines, review statistics and location counts, check the listing status, and download the live API definition.
+
+The following endpoints are available:
+
+* [Heatlh](#health)
+* [Hotels](#hotels)
+* [Stats](#stats)
+* [Brands](#brands)
+* [Cities](#cities)
+
+**Endpoints**
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| GET | `/api/v1/healthz` | Checks API health. |
+| GET | `/api/v1/hotels` | List approved hotels. | 
+| GET | `/api/v1/stats` | Get approved hotel totals and brand counts. |
+| GET | `/api/v1/brands` | 	List brands and hotel counts. |
+| GET | `/api/v1/cities` | 	List cities and hotel counts. |
+
+**Query Parameters**
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `search` | string | - | Filter city names |
+| `page` | integer | - | Page number; defaults to `1` |
+| `limit` | integer | - | 	Results per page; defaults to `20`, maximum `100` |
+
