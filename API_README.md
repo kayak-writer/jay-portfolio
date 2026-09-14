@@ -4,13 +4,13 @@ Job Finder aggregates job listings from across the web to highlight technical wr
 
 ## Index
 * [Overview](#overview)
-* [Base URL](#base-URL)
+* [Base URL](#base-url)
 * [Authentication](#authentication)
 * [Quick Start](#quick-start)
-* [Errors](#Errors)
+* [Errors](#errors)
 * [Rate Limits](#rate-limits)
 * [Rate Freshness](#rate-freshness)
-* [Contact](#Contact)
+* [Contact](#contact)
 
 ## Overview
 
@@ -70,11 +70,11 @@ Job Finder's public API lets you retrieve current job listings, review statistic
 
 The following endpoints are available:
 
-* [Status](###status)
-* [Jobs](###jobs)
-* [Stats](###stats)
-* [Locations](###locations)
-* [Open API](#openapi)
+* [Status](#status)
+* [Jobs](#jobs)
+* [Stats](#stats)
+* [Locations](#locations)
+* [OpenAPI](#open-api)
 
 **Endpoints:**
 
@@ -1452,9 +1452,11 @@ This can be imported into Postman, Swagger UI, or other API tools for interactiv
 
 ``` json
 
-{
-     "error": "UNAUTHORIZED",
-     "message": "API key is missing or invalid"
+ {
+     "error": {
+       "code": "UNAUTHORIZED",
+       "message": "API key is missing or invalid"
+     }
    }
 
 ```
