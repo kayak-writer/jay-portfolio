@@ -28,7 +28,7 @@ Make your first request
 curl "https://rowfinder.xyz/api/v1/hotels"
 ```
 
-A sucessfull response contains a hotels array:
+A successful response contains a hotels array:
 
 ``` json
 {
@@ -132,7 +132,7 @@ RowFinder allows you to retrieve listings of hotels with rowing machines, review
 
 The following endpoints are available:
 
-* [Heatlh](#healthz)
+* [Health](#healthz)
 * [Hotels](#hotels)
 * [Stats](#stats)
 * [Brands](#brands)
@@ -156,7 +156,7 @@ The following endpoints are available:
 | `page` | integer | - | Page number; defaults to `1` |
 | `limit` | integer | - | 	Results per page; defaults to `20`, maximum `100` |
 
-### Healthz
+### Health
 
 **Endpoint**
 
@@ -299,14 +299,14 @@ curl "https://rowfinder.xyz/api/v1/hotels"
 
 | Field | Type | Description |
 | --- | --- | --- | 
-| `id` | number | Unique hotel identifier 
-| `name` | string | Hotel name 
-| `city` | string | City and region or country, such as `Boston, MA.` 
-| `brand` | string | Normalized rowing-machine brand identifier, such as `"hydrow"` or `"concept2"`. 
-| `model` | string  or null | Specific machine model when known. `null` means no model was provided. 
-| `notes` | string or null | Additional information about the equipment or gym. `null` means no notes were provided. 
-| `votes` | number | Number of upvotes the hotel has received. 
-| `createdAt` | number | Unix timestamp in seconds indicating when the listing was created. 
+| `id` | number | Unique hotel identifier |
+| `name` | string | Hotel name |
+| `city` | string | City and region or country, such as `Boston, MA.` |
+| `brand` | string | Normalized rowing-machine brand identifier, such as `"hydrow"` or `"concept2"`. |
+| `model` | string  or null | Specific machine model when known. `null` means no model was provided. |
+| `notes` | string or null | Additional information about the equipment or gym. `null` means no notes were provided. |
+| `votes` | number | Number of upvotes the hotel has received. |
+| `createdAt` | number | Unix timestamp in seconds indicating when the listing was created. |
 
 ### Stats
 
@@ -356,10 +356,10 @@ curl "https://rowfinder.xyz/api/v1/stats"
 
 | Field | Type | Description |
 | --- | --- | --- | 
-| `data.total` | number | Total number of approved hotels
-| `cities` | number | Total number of cities covered
-| `brand` | string | Brand name of erg (e.g., Concept 2 or Hydrow)
-| `byBrand.total` | number | Total number of each brand (e.g., Concept 2 or Hydrow)
+| `data.total` | number | Total number of approved hotels |
+| `cities` | number | Total number of cities covered |
+| `brand` | string | Brand name of erg (e.g., Concept 2 or Hydrow) |
+| `byBrand.total` | number | Total number of each brand (e.g., Concept 2 or Hydrow) |
 
 ### Brands
 
@@ -430,8 +430,8 @@ curl "https://rowfinder.xyz/api/v1/brands"
 
 | Field | Type | Description |
 | --- | --- | --- | 
-| `data.brand` | number | Brand name | (e.g., Concept 2 or Hydrow)
-| `data.total` | number | Total number of each brand of erg (e.g., Concept 2 or Hydrow)
+| `data.brand` | string | Brand name (e.g., Concept 2 or Hydrow) |
+| `data.total` | number | Total number of each brand of erg (e.g., Concept 2 or Hydrow) |
 
 
 ### Cities
@@ -441,7 +441,7 @@ curl "https://rowfinder.xyz/api/v1/brands"
 Retrieves statistics for the listing of hotels.
 
 ```bash
-curl "https://rowfinder.xyz/api/v1/Cities"
+curl "https://rowfinder.xyz/api/v1/cities"
 ```
 
 **Responses**
@@ -487,31 +487,17 @@ curl "https://rowfinder.xyz/api/v1/Cities"
 
 | Field | Type | Description |
 | --- | --- | --- | 
-| `data.city` | number | City name
-| `data.total` | number | Total number of listed ergs in each city
+| `data.city` | string | City name |
+| `data.total` | number | Total number of listed ergs in each city |
 
 ## Errors
 
 | Status Code | Error Code | Meaning |
 | --- | --- | --- |
 | 400 | `INVALID_QUERY` | One or more query parameters are invalid. |
-| 401 | `UNAUTHORIZED` | A valid API key is required. |
 | 404 | `NOT_FOUND` | The requested public API endpoint does not exist. | 
 | 429 | `RATE_LIMITED` | The rate limit was exceeded. | 
 | 500 | `INTERNAL_ERROR` | An unexpected server-side error occurred. | 
-
-**Example:**
-
-``` json
-
- {
-     "error": {
-       "code": "UNAUTHORIZED",
-       "message": "API key is missing or invalid"
-     }
-   }
-
-```
 
 ## Rate Limits
 
