@@ -311,8 +311,8 @@ curl "https://rowfinder.xyz/api/v1/hotels"
 | `pagination.limit` | number | The maximum number of records requested for each page. In this example, up to `20` records can appear on a page. |
 | `pagination.total` | number | The total number of matching records across all pages. In this example, there are `8` matching records |
 | `pagination.totalPages` | number | The total number of pages available based on `total` and `limit`. In this example, the results fit on `1` page. |
-| `pagination.hasNextPage` | string | A boolean indicating whether another page of results is available. `false` means there is no next page. |
-| `pagination.hasPreviousPage` | string | A boolean indicating whether a page exists before the current page. `false` means this is the first page. |
+| `pagination.hasNextPage` | boolean | A boolean indicating whether another page of results is available. `false` means there is no next page. |
+| `pagination.hasPreviousPage` | boolean | A boolean indicating whether a page exists before the current page. `false` means this is the first page. |
 
 ### Stats
 
