@@ -27,7 +27,7 @@ The API uses API-key authentication.
 
 `X-API-Key: YOUR_API_KEY`
 
-To request API access, contact the API owner ` jay@technicalwriting.io `. Keys are issued individually and should be stored securely.
+To request API access, contact the API owner at ` jay@technicalwriting.io `. Keys are issued individually and should be stored securely.
 
 ## Quick Start
 
