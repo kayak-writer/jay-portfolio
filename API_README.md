@@ -4,12 +4,12 @@ Job Finder aggregates job listings from across the web to highlight technical wr
 
 ## Index
 * [Overview](#overview)
-* [Base URL](#Base URL)
+* [Base URL](#base-URL)
 * [Authentication](#authentication)
-* [Quick Start](#Quick Start)
+* [Quick Start](#quick-start)
 * [Errors](#Errors)
-* [Rate Limits](#Rate Limits)
-* [Rate Freshness](#Rate Freshness)
+* [Rate Limits](#rate-limits)
+* [Rate Freshness](#rate-freshness)
 * [Contact](#Contact)
 
 ## Overview
@@ -111,6 +111,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 
 ```
 
+
 **Jobs**
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
@@ -180,6 +181,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
     "pageSize": 50
 }
 ```
+
 
 **Stats**
 ```bash
@@ -298,6 +300,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs/stats?" \
 }
 
 ```
+
 
 **Locations**
 ```bash
@@ -704,7 +707,6 @@ curl [https://job-scraper.replit.app/api/v1/jobs/locations?" \
 
 ```
 
----
 
 ## Errors
 
