@@ -2,6 +2,16 @@
 
 Job Finder aggregates job listings from across the web to highlight technical writing, developer advocate, and Learning & Development (L&D) roles.
 
+## Index
+* [Overview](#overview)
+* [Base URL](#Base URL)
+* [Authentication](#authentication)
+* [Quick Start](#Quick Start)
+* [Errors](#Errors)
+* [Rate Limits](#Rate Limits)
+* [Rate Freshness](#Rate Freshness)
+* [Contact](#Contact)
+
 ## Overview
 
 This Application Programming Interface (API) seeks to streamline the job application process by making it easier to find open roles.
@@ -80,7 +90,28 @@ Job Finder's public API lets you retrieve current job listings, review statistic
 | `sortBy` | string | "postedAt" | Sort by "postedAt", "scrapedAt", or "company" |
 | `sortOrder` | string | "desc" | Sort order: "asc" or "desc" |
 
-**Example Request (Technical Writer roles that offer remote work):**
+**Status**
+```bash
+curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
+-H "X-API-Key: YOUR_API_KEY"
+```
+
+**Response**
+
+```json
+
+{
+    "isRunning": false,
+    "lastRunAt": "2026-09-09T00:00:05.096Z",
+    "lastRunJobsFound": 116,
+    "nextRunAt": null,
+    "totalJobs": 151,
+    "enabledCompanies": 760
+}
+
+```
+
+**Jobs**
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -150,20 +181,527 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 }
 ```
 
-**More Examples:**
-
-Filter by Platform (Hacker News only):
+**Stats**
 ```bash
-curl
-"https://job-scraper.replit.app/api/v1/jobs?platform=hackernews&pageSize=10 \
+curl "https://job-scraper.replit.app/api/v1/jobs/stats?" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
-Filter by Location and Company:
-``` bash
-curl
-"https://job-scraper.replit.app/api/v1/jobs?location=Boston&company=Starburst \
+**Response**
+
+```json
+
+{
+    "total": 151,
+    "byPlatform": [
+        {
+            "platform": "lever",
+            "count": 10
+        },
+        {
+            "platform": "smartrecruiters",
+            "count": 1
+        },
+        {
+            "platform": "ashby",
+            "count": 13
+        },
+        {
+            "platform": "greenhouse",
+            "count": 122
+        },
+        {
+            "platform": "hackernews",
+            "count": 5
+        }
+    ],
+    "bySearchTerm": [
+        {
+            "searchTerm": "documentation coordinator",
+            "count": 1
+        },
+        {
+            "searchTerm": "documentation manager",
+            "count": 3
+        },
+        {
+            "searchTerm": "content designer",
+            "count": 4
+        },
+        {
+            "searchTerm": "knowledge management",
+            "count": 1
+        },
+        {
+            "searchTerm": "knowledge manager",
+            "count": 6
+        },
+        {
+            "searchTerm": "instructional designer",
+            "count": 15
+        },
+        {
+            "searchTerm": "documentation engineer",
+            "count": 6
+        },
+        {
+            "searchTerm": "technical communications manager",
+            "count": 1
+        },
+        {
+            "searchTerm": "developer advocate",
+            "count": 43
+        },
+        {
+            "searchTerm": "information architect",
+            "count": 1
+        },
+        {
+            "searchTerm": "knowledge engineer",
+            "count": 4
+        },
+        {
+            "searchTerm": "content strategist",
+            "count": 13
+        },
+        {
+            "searchTerm": "documentation specialist",
+            "count": 1
+        },
+        {
+            "searchTerm": "ux writer",
+            "count": 3
+        },
+        {
+            "searchTerm": "technical publications manager",
+            "count": 3
+        },
+        {
+            "searchTerm": "learning experience designer",
+            "count": 5
+        },
+        {
+            "searchTerm": "technical writer",
+            "count": 38
+        },
+        {
+            "searchTerm": "developer relations content writer",
+            "count": 1
+        },
+        {
+            "searchTerm": "technical content developer",
+            "count": 2
+        }
+    ],
+    "remoteCount": 42,
+    "lastScrapedAt": "2026-09-09T00:00:05.096Z"
+}
+
+```
+
+**Locations**
+```bash
+curl [https://job-scraper.replit.app/api/v1/jobs/locations?" \
 -H "X-API-Key: YOUR_API_KEY"
+```
+
+**Response**
+
+```json
+
+{
+    "locations": [
+        {
+            "location": "Amsterdam, Netherlands; Belgrade, Serbia; Limassol, Cyprus; London, United Kingdom; Madrid, Spain; Prague, Czech Republic; Remote, Germany; Warsaw, Poland; Yerevan, Armenia",
+            "count": 1
+        },
+        {
+            "location": "Ashville, Ohio, United States",
+            "count": 1
+        },
+        {
+            "location": "Atlanta",
+            "count": 1
+        },
+        {
+            "location": "Atlanta, Georgia",
+            "count": 1
+        },
+        {
+            "location": "Atlanta, Georgia, United States",
+            "count": 1
+        },
+        {
+            "location": "Austin, Texas",
+            "count": 1
+        },
+        {
+            "location": "Bangalore, India",
+            "count": 4
+        },
+        {
+            "location": "Belgrade, Serbia; Berlin, Germany; Limassol, Cyprus; Madrid, Spain; Munich, Germany; Paphos, Cyprus; Prague, Czech Republic; Remote, Germany; Warsaw, Poland; Yerevan, Armenia",
+            "count": 1
+        },
+        {
+            "location": "Bengaluru, India",
+            "count": 3
+        },
+        {
+            "location": "Berlin Office — Berlin, Berlin-Brandenburg, Germany",
+            "count": 1
+        },
+        {
+            "location": "Berlin, Germany",
+            "count": 1
+        },
+        {
+            "location": "Boston, MA",
+            "count": 1
+        },
+        {
+            "location": "Boston, Massachusetts; Foster City, California; Marlton, New Jersey; Remote, United States",
+            "count": 1
+        },
+        {
+            "location": "Bucharest",
+            "count": 1
+        },
+        {
+            "location": "California - San Francisco",
+            "count": 2
+        },
+        {
+            "location": "California, USA, Remote; Colorado, USA, Remote; Illinois, USA, Remote; New York, USA, Remote; Washington, USA, Remote",
+            "count": 2
+        },
+        {
+            "location": "California, USA, Remote; Nevada, USA, Remote; Texas, USA, Remote; Washington, USA, Remote",
+            "count": 1
+        },
+        {
+            "location": "California, USA, Remote; New York, USA, Remote",
+            "count": 1
+        },
+        {
+            "location": "Canada (Remote)",
+            "count": 1
+        },
+        {
+            "location": "Costa Mesa, California, United States",
+            "count": 18
+        },
+        {
+            "location": "Denver, CO - Louisville",
+            "count": 1
+        },
+        {
+            "location": "Dublin",
+            "count": 2
+        },
+        {
+            "location": "Düsseldorf",
+            "count": 1
+        },
+        {
+            "location": "Europe",
+            "count": 1
+        },
+        {
+            "location": "Geneva",
+            "count": 1
+        },
+        {
+            "location": "Ghent",
+            "count": 1
+        },
+        {
+            "location": "Gurgaon, India",
+            "count": 1
+        },
+        {
+            "location": "Gurugram, India",
+            "count": 1
+        },
+        {
+            "location": "Hawthorne, CA",
+            "count": 2
+        },
+        {
+            "location": "Home based - EMEA",
+            "count": 1
+        },
+        {
+            "location": "Lehi, Utah; Raleigh, North Carolina; Santa Clara, California",
+            "count": 2
+        },
+        {
+            "location": "London",
+            "count": 2
+        },
+        {
+            "location": "london",
+            "count": 1
+        },
+        {
+            "location": "London, United Kingdom",
+            "count": 1
+        },
+        {
+            "location": "Los Angeles, CA",
+            "count": 1
+        },
+        {
+            "location": "Los Angeles, California, United States",
+            "count": 1
+        },
+        {
+            "location": "Massachusetts - Boston",
+            "count": 2
+        },
+        {
+            "location": "Minneapolis, MN",
+            "count": 1
+        },
+        {
+            "location": "Munich area, Germany",
+            "count": 1
+        },
+        {
+            "location": "New York City — New York City, New York, United States",
+            "count": 1
+        },
+        {
+            "location": "New York City, NY; San Francisco, CA; Seattle, WA",
+            "count": 1
+        },
+        {
+            "location": "New York City; Palo Alto; Seattle",
+            "count": 1
+        },
+        {
+            "location": "New York, New York",
+            "count": 3
+        },
+        {
+            "location": "New York, New York — New York, New York, United States",
+            "count": 1
+        },
+        {
+            "location": "New York, New York, United States",
+            "count": 1
+        },
+        {
+            "location": "New York, New York, United States; Washington, District of Columbia, United States",
+            "count": 1
+        },
+        {
+            "location": "NY_Manhattan_Office",
+            "count": 1
+        },
+        {
+            "location": "Oakland, California, United States",
+            "count": 1
+        },
+        {
+            "location": "Olympia, WA",
+            "count": 1
+        },
+        {
+            "location": "Palo Alto, California",
+            "count": 1
+        },
+        {
+            "location": "Prague, Czech Republic",
+            "count": 1
+        },
+        {
+            "location": "Prague, Czechia",
+            "count": 1
+        },
+        {
+            "location": "Pune, Maharashtra",
+            "count": 1
+        },
+        {
+            "location": "Redlands, CA",
+            "count": 4
+        },
+        {
+            "location": "Remote",
+            "count": 1
+        },
+        {
+            "location": "Remote - Europe",
+            "count": 1
+        },
+        {
+            "location": "Remote - US",
+            "count": 6
+        },
+        {
+            "location": "Remote - USA",
+            "count": 2
+        },
+        {
+            "location": "Remote - USA — United States",
+            "count": 1
+        },
+        {
+            "location": "Remote — USA",
+            "count": 1
+        },
+        {
+            "location": "Remote Eligible, US",
+            "count": 1
+        },
+        {
+            "location": "Remote in the United States — San Francisco, California, United States",
+            "count": 1
+        },
+        {
+            "location": "Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+            "count": 1
+        },
+        {
+            "location": "Remote, Colorado, United States, AMER",
+            "count": 1
+        },
+        {
+            "location": "Remote, North Carolina, United States, AMER",
+            "count": 1
+        },
+        {
+            "location": "Remote, US",
+            "count": 1
+        },
+        {
+            "location": "Remote, USA",
+            "count": 1
+        },
+        {
+            "location": "Remote: San Mateo area",
+            "count": 1
+        },
+        {
+            "location": "San Francisco",
+            "count": 1
+        },
+        {
+            "location": "San Francisco — San Francisco, California, United States",
+            "count": 1
+        },
+        {
+            "location": "San Francisco, CA",
+            "count": 2
+        },
+        {
+            "location": "San Francisco, CA | New York City, NY",
+            "count": 3
+        },
+        {
+            "location": "San Francisco, CA or Remote, US ",
+            "count": 1
+        },
+        {
+            "location": "San Francisco, California",
+            "count": 7
+        },
+        {
+            "location": "San Francisco, California, United States",
+            "count": 1
+        },
+        {
+            "location": "San Jose, CR",
+            "count": 1
+        },
+        {
+            "location": "San Mateo, CA, United States",
+            "count": 1
+        },
+        {
+            "location": "Santa Clara, CALIFORNIA, United States",
+            "count": 1
+        },
+        {
+            "location": "São Paulo, Brazil",
+            "count": 1
+        },
+        {
+            "location": "Seattle, Washington",
+            "count": 2
+        },
+        {
+            "location": "Senior Sales Engineer, Sales Engineer",
+            "count": 1
+        },
+        {
+            "location": "Seoul",
+            "count": 1
+        },
+        {
+            "location": "Seoul, South Korea",
+            "count": 1
+        },
+        {
+            "location": "Singapore, Singapore",
+            "count": 1
+        },
+        {
+            "location": "Staff Backend Engineer, Founding DevRel, Founder's Associate",
+            "count": 1
+        },
+        {
+            "location": "Tel Aviv",
+            "count": 2
+        },
+        {
+            "location": "Tel Aviv/ Netanya, Israel",
+            "count": 1
+        },
+        {
+            "location": "Tokyo, Japan",
+            "count": 1
+        },
+        {
+            "location": "Toronto",
+            "count": 1
+        },
+        {
+            "location": "Toronto, Ontario, Canada",
+            "count": 2
+        },
+        {
+            "location": "United States",
+            "count": 3
+        },
+        {
+            "location": "United States (Remote)",
+            "count": 1
+        },
+        {
+            "location": "United States of America",
+            "count": 1
+        },
+        {
+            "location": "US Remote",
+            "count": 1
+        },
+        {
+            "location": "US-Based / Remote",
+            "count": 1
+        },
+        {
+            "location": "US, Remote",
+            "count": 1
+        },
+        {
+            "location": "Vienna, Virginia, United States",
+            "count": 1
+        }
+    ]
+}
+
 ```
 
 ---
