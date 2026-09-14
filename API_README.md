@@ -14,7 +14,7 @@ Job Finder aggregates job listings from across the web to highlight technical wr
 
 ## Overview
 
-This Application Programming Interface (API) seeks to streamline the job application process by making it easier to find open roles.
+This Application Programming Interface (API) makes it easier to find open roles on employer websites and industry job boards.
 
 ## Base URL
 
@@ -74,7 +74,7 @@ The following endpoints are available:
 * [Jobs](###jobs)
 * [Stats](###stats)
 * [Locations](###locations)
-
+* [Open API](#openapi)
 
 **Endpoints:**
 
@@ -91,7 +91,7 @@ The following endpoints are available:
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `page` | integer | 1 | Page number for pagination |
-| `pageSize` | integer | 20 | Number of results per page (max 100) |
+| `pageSize` | integer | 50 | Number of results per page (max 100) |
 | `searchTerm` | string | — | Filter by job title or keywords (e.g., "technical writing") |
 | `location` | string | — | Filter by location (e.g., "Remote", "New York, NY") |
 | `platform` | string | — | Filter by source platform (e.g., "hackernews", "remoteok") |
@@ -102,7 +102,7 @@ The following endpoints are available:
 
 ### Status ###
 ```bash
-curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
+curl "https://job-scraper.replit.app/api/v1/status" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
@@ -221,7 +221,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 
 ### Stats ###
 ```bash
-curl "https://job-scraper.replit.app/api/v1/jobs/stats?" \
+curl "https://job-scraper.replit.app/api/v1/jobs/stats" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
@@ -349,7 +349,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs/stats?" \
 
 ### Locations ###
 ```bash
-curl [https://job-scraper.replit.app/api/v1/jobs/locations?" \
+curl "https://job-scraper.replit.app/api/v1/jobs/locations" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
@@ -759,6 +759,684 @@ curl [https://job-scraper.replit.app/api/v1/jobs/locations?" \
 | `location` | string | Job location string |
 | `count` | integer | Number of jobs in that location |
 
+### Open API ###
+
+```bash
+curl "https://job-scraper.replit.app/api/v1/jobs/openapi.json" \
+-H "X-API-Key: YOUR_API_KEY"
+```
+**Response**
+
+``` json
+
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Job Board Public API",
+        "version": "1.0.0",
+        "description": "Read-only access to job listings collected by the job board scraper. API keys are limited to 10 requests per minute."
+    },
+    "servers": [
+        {
+            "url": "/api/v1",
+            "description": "Public API base path"
+        }
+    ],
+    "security": [
+        {
+            "ApiKeyAuth": []
+        }
+    ],
+    "paths": {
+        "/jobs": {
+            "get": {
+                "operationId": "listPublicJobs",
+                "summary": "List job listings",
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "platform",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "lever",
+                                "greenhouse",
+                                "adp",
+                                "ashby",
+                                "smartrecruiters",
+                                "workday",
+                                "hackernews",
+                                "workable"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "isRemote",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "true",
+                                "false"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "searchTerm",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 1,
+                            "minimum": 1
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 50,
+                            "minimum": 1,
+                            "maximum": 100
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "postedAt",
+                                "scrapedAt"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "asc",
+                                "desc"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Paginated job listings",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobListResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/jobs/stats": {
+            "get": {
+                "operationId": "getPublicJobStats",
+                "summary": "Get job listing statistics",
+                "responses": {
+                    "200": {
+                        "description": "Job statistics",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobStats"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/locations": {
+            "get": {
+                "operationId": "getPublicJobLocations",
+                "summary": "List available job locations",
+                "responses": {
+                    "200": {
+                        "description": "Distinct job locations with listing counts",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobLocationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/status": {
+            "get": {
+                "operationId": "getPublicScrapeStatus",
+                "summary": "Get scraper status",
+                "responses": {
+                    "200": {
+                        "description": "Scraper status",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ScrapeStatus"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/openapi.json": {
+            "get": {
+                "operationId": "getPublicOpenApiSpec",
+                "summary": "Get the OpenAPI document",
+                "responses": {
+                    "200": {
+                        "description": "OpenAPI document",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-API-Key"
+            }
+        },
+        "schemas": {
+            "JobListing": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "title",
+                    "company",
+                    "platform",
+                    "url",
+                    "scrapedAt"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "company": {
+                        "type": "string"
+                    },
+                    "platform": {
+                        "type": "string",
+                        "enum": [
+                            "lever",
+                            "greenhouse",
+                            "adp",
+                            "ashby",
+                            "smartrecruiters",
+                            "workday",
+                            "hackernews",
+                            "workable"
+                        ]
+                    },
+                    "location": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "isRemote": {
+                        "type": "boolean"
+                    },
+                    "salaryRaw": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "postedAt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "scrapedAt": {
+                        "type": "string"
+                    },
+                    "searchTerm": {
+                        "type": "string"
+                    }
+                }
+            },
+            "JobListResponse": {
+                "type": "object",
+                "required": [
+                    "jobs",
+                    "total",
+                    "page",
+                    "pageSize"
+                ],
+                "properties": {
+                    "jobs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/JobListing"
+                        }
+                    },
+                    "total": {
+                        "type": "number"
+                    },
+                    "page": {
+                        "type": "number"
+                    },
+                    "pageSize": {
+                        "type": "number"
+                    }
+                }
+            },
+            "JobStats": {
+                "type": "object",
+                "required": [
+                    "total",
+                    "byPlatform",
+                    "bySearchTerm",
+                    "remoteCount",
+                    "lastScrapedAt"
+                ],
+                "properties": {
+                    "total": {
+                        "type": "number"
+                    },
+                    "byPlatform": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "platform",
+                                "count"
+                            ],
+                            "properties": {
+                                "platform": {
+                                    "type": "string"
+                                },
+                                "count": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    },
+                    "bySearchTerm": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "searchTerm",
+                                "count"
+                            ],
+                            "properties": {
+                                "searchTerm": {
+                                    "type": "string"
+                                },
+                                "count": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    },
+                    "remoteCount": {
+                        "type": "number"
+                    },
+                    "lastScrapedAt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    }
+                }
+            },
+            "JobLocationsResponse": {
+                "type": "object",
+                "required": [
+                    "locations"
+                ],
+                "properties": {
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "location",
+                                "count"
+                            ],
+                            "properties": {
+                                "location": {
+                                    "type": "string"
+                                },
+                                "count": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ScrapeStatus": {
+                "type": "object",
+                "required": [
+                    "isRunning",
+                    "totalJobs",
+                    "enabledCompanies"
+                ],
+                "properties": {
+                    "isRunning": {
+                        "type": "boolean"
+                    },
+                    "lastRunAt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "lastRunJobsFound": {
+                        "type": [
+                            "number",
+                            "null"
+                        ]
+                    },
+                    "nextRunAt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "totalJobs": {
+                        "type": "number"
+                    },
+                    "enabledCompanies": {
+                        "type": "number"
+                    }
+                }
+            },
+            "ErrorResponse": {
+                "type": "object",
+                "required": [
+                    "error"
+                ],
+                "properties": {
+                    "error": {
+                        "type": "object",
+                        "required": [
+                            "code",
+                            "message"
+                        ],
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+```
+
+**Response Fields Explained**
+
+Returns the full OpenAPI 3.1.0 specification document for the API.
+This can be imported into Postman, Swagger UI, or other API tools for interactive documentation and testing.
 
 ## Errors
 
@@ -769,6 +1447,17 @@ curl [https://job-scraper.replit.app/api/v1/jobs/locations?" \
 | 404 | `NOT_FOUND` | The requested public API endpoint does not exist. | 
 | 429 | `RATE_LIMITED` | The rate limit was exceeded. | 
 | 500 | `INTERNAL_ERROR` | An unexpected server-side error occurred. | 
+
+**Example:**
+
+``` json
+
+{
+     "error": "UNAUTHORIZED",
+     "message": "API key is missing or invalid"
+   }
+
+```
 
 ## Rate Limits
 
