@@ -156,3 +156,34 @@ The following endpoints are available:
 | `page` | integer | - | Page number; defaults to `1` |
 | `limit` | integer | - | 	Results per page; defaults to `20`, maximum `100` |
 
+### HealthZ
+
+**Endpoint**
+
+Check the directory status and database metadata.
+
+```bash
+curl "https://rowfinder.xyz/api/v1/healthz"
+```
+
+**Response**
+
+```json
+
+{
+    "status": "ok",
+    "service": "rowfinder-api",
+    "version": "v1"
+}
+
+```
+
+**Response Fields Explained**
+
+| Field | Type | Description |
+| --- | --- | ---|
+| Status | String | Current health status of the API. The value ` "ok" ` indicates that the service is running and responding normally. |
+| Service | String | Name of the service returning the response. This identifies the service as `rowfinder-api`. |
+| Version | String | Version of the public API responding to the request. The current version is `v1`. |
+
+### Hotels
