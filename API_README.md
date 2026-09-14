@@ -100,7 +100,7 @@ The following endpoints are available:
 | `sortBy` | string | "postedAt" | Sort by "postedAt", "scrapedAt", or "company" |
 | `sortOrder` | string | "desc" | Sort order: "asc" or "desc" |
 
-### Status ###
+### Status
 ```bash
 curl "https://job-scraper.replit.app/api/v1/status" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -132,7 +132,7 @@ curl "https://job-scraper.replit.app/api/v1/status" \
 | `totalJobs` | integer | Total jobs in database |
 | `enabledCompanies` | integer | Number of companies being scraped |
 
-### Jobs ###
+### Jobs
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -219,7 +219,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 | `searchTerm` | string | Keyword used to find this listing |
 
 
-### Stats ###
+### Stats
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs/stats" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -347,7 +347,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs/stats" \
 | `remoteCount` | integer | Number of remote jobs |
 | `lastScrapedAt` | ISO 8601 | Timestamp of last scrape run |
 
-### Locations ###
+### Locations
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs/locations" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -759,7 +759,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs/locations" \
 | `location` | string | Job location string |
 | `count` | integer | Number of jobs in that location |
 
-### Open API ###
+### Open API
 
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs/openapi.json" \
