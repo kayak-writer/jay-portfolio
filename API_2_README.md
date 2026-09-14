@@ -307,6 +307,12 @@ curl "https://rowfinder.xyz/api/v1/hotels"
 | `notes` | string or null | Additional information about the equipment or gym. `null` means no notes were provided. |
 | `votes` | number | Number of upvotes the hotel has received. |
 | `createdAt` | number | Unix timestamp in seconds indicating when the listing was created. |
+| `pagination.page` | number | Current page number returned in the response. In this example, the response contains page `1`.
+| `pagination.limit` | number | The maximum number of records requested for each page. In this example, up to `20` records can appear on a page. |
+| `pagination.total` | number | The total number of matching records across all pages. In this example, there are `8` matching records |
+| `pagination.totalPages` | number | The total number of pages available based on `total` and `limit`. In this example, the results fit on `1` page. |
+| `pagination.hasNextPage` | string | A boolean indicating whether another page of results is available. `false` means there is no next page. |
+| `pagination.hasPreviousPage` | string | A boolean indicating whether a page exists before the current page. `false` means this is the first page. |
 
 ### Stats
 
@@ -505,7 +511,7 @@ IPs are limited to 120 requests per minute. If you exceed this limit, the API re
 
 ## Data Freshness
 
-New listings display as soon as a listing is approved. Use `GET /api/v1/healthZ` to check the latest run.
+New listings display as soon as a listing is approved. Use `GET /api/v1/healthz` to check the latest run.
 
 ## Contact
 
