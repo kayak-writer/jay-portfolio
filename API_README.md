@@ -68,6 +68,16 @@ A successful response returns a jobs array and pagination details:
 
 Job Finder's public API lets you retrieve current job listings, review statistics and location counts, check the aggregator status, and download the live API definition. Every endpoint requires an `X-API-Key` header.
 
+The following endpoints are available:
+
+* [Status](###status)
+* [Jobs](###jobs)
+* [Stats](###stats)
+* [Locations](###locations)
+
+
+**Endpoints:**
+
 | Method | Endpoint | Purpose |
 | --- | --- | --- |
 | GET | `/api/v1/jobs` | Retrieve and filter current job listings. |
@@ -90,7 +100,7 @@ Job Finder's public API lets you retrieve current job listings, review statistic
 | `sortBy` | string | "postedAt" | Sort by "postedAt", "scrapedAt", or "company" |
 | `sortOrder` | string | "desc" | Sort order: "asc" or "desc" |
 
-**Status**
+### Status ###
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -111,8 +121,18 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 
 ```
 
+**Response Fields Explained**
 
-**Jobs**
+| Field | Type | Description |
+|-------|------|-------------|
+| `isRunning` | boolean | Whether scraper is currently running |
+| `lastRunAt` | ISO 8601 | Timestamp of most recent scrape |
+| `lastRunJobsFound` | integer | Jobs found in last scrape |
+| `nextRunAt` | string \| null | When next scrape is scheduled |
+| `totalJobs` | integer | Total jobs in database |
+| `enabledCompanies` | integer | Number of companies being scraped |
+
+### Jobs ###
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -182,8 +202,24 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 }
 ```
 
+**Response Fields Explained**
 
-**Stats**
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | integer | Unique identifier for the job listing |
+| `title` | string | Job title |
+| `company` | string | Company name |
+| `platform` | string | Source platform (e.g., Greenhouse, Ashby, or Lever) |
+| `location` | string | Job location |
+| `isRemote` | boolean | Whether the job is remote |
+| `salaryRaw` | string \| null | Raw salary from posting (null if not provided) |
+| `url` | string | Direct link to the job posting |
+| `postedAt` | ISO 8601 | When posted on source platform |
+| `scrapedAt` | ISO 8601 | When Job Finder indexed it |
+| `searchTerm` | string | Keyword used to find this listing |
+
+
+### Stats ###
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs/stats?" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -301,8 +337,17 @@ curl "https://job-scraper.replit.app/api/v1/jobs/stats?" \
 
 ```
 
+**Response Fields Explained**
 
-**Locations**
+| Field | Type | Description |
+|-------|------|-------------|
+| `total` | integer | Total number of jobs indexed |
+| `byPlatform` | array | Jobs broken down by source platform |
+| `bySearchTerm` | array | Jobs broken down by search term |
+| `remoteCount` | integer | Number of remote jobs |
+| `lastScrapedAt` | ISO 8601 | Timestamp of last scrape run |
+
+### Locations ###
 ```bash
 curl [https://job-scraper.replit.app/api/v1/jobs/locations?" \
 -H "X-API-Key: YOUR_API_KEY"
@@ -706,6 +751,13 @@ curl [https://job-scraper.replit.app/api/v1/jobs/locations?" \
 }
 
 ```
+
+**Response Fields Explained**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `location` | string | Job location string |
+| `count` | integer | Number of jobs in that location |
 
 
 ## Errors
