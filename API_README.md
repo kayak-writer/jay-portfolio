@@ -7,14 +7,15 @@ Job Finder aggregates job listings from across the web to highlight technical wr
 * [Base URL](#base-url)
 * [Authentication](#authentication)
 * [Quick Start](#quick-start)
+* [Endpoints](#endpoints)
 * [Errors](#errors)
 * [Rate Limits](#rate-limits)
-* [Rate Freshness](#rate-freshness)
+* [Data Freshness](#data-freshness)
 * [Contact](#contact)
 
 ## Overview
 
-This Application Programming Interface (API) makes it easier to find open roles on employer websites and industry job boards.
+Job Finder aggregates technical writing, developer advocate, and L&D roles from across the web—Greenhouse, Ashby, Lever, HackerNews, and more. Find relevant positions without manually checking multiple job boards.
 
 ## Base URL
 
