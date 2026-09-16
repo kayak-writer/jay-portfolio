@@ -787,7 +787,7 @@ curl "https://job-scraper.replit.app/api/v1/locations" \
 Download the full OpenAPI 3.1.0 specification.
 
 ```bash
-curl "https://job-scraper.replit.app/api/v1/jobs/openapi.json" \
+curl "https://job-scraper.replit.app/api/v1/openapi.json" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 **Response**
@@ -1488,7 +1488,7 @@ This can be imported into Postman, Swagger UI, or other API tools for interactiv
 
 ## Rate Limits
 
-API keys are limited to 60 requests per minute. If you exceed this limit, the API returns `429 RATE_LIMITED`.
+API keys are limited to 10 requests per minute. If you exceed this limit, the API returns `429 RATE_LIMITED`.
 
 ## Data Freshness
 
