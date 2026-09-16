@@ -370,7 +370,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs/stats" \
 Get all locations with available jobs.
 
 ```bash
-curl "https://job-scraper.replit.app/api/v1/jobs/locations" \
+curl "https://job-scraper.replit.app/api/v1/locations" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
