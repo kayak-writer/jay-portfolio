@@ -1,6 +1,6 @@
 # Job Finder
 
-Job Finder collects job listings from across the web to highlight technical writing, developer advocate, and Learning & Development (L&D) roles.
+Job Finder collects job listings from across the web to highlight open roles that meet specific requirements.
 
 ## Index
 * [Overview](#overview)
