@@ -27,7 +27,7 @@ The API uses API-key authentication.
 
 `X-API-Key: YOUR_API_KEY`
 
-To request API access, contact the API owner at ` jay@technicalwriting.io `. Keys are issued individually and should be stored securely.
+To request API access, contact the API owner at `jay@technicalwriting.io`. Keys are issued individually and should be stored securely.
 
 ## Quick Start
 
@@ -95,10 +95,9 @@ The following endpoints are available:
 | `pageSize` | integer | 50 | Number of results per page (max 100) |
 | `searchTerm` | string | — | Filter by job title or keywords (e.g., "technical writing") |
 | `location` | string | — | Filter by location (e.g., "Remote", "New York, NY") |
-| `platform` | string | — | Filter by source platform (e.g., "hackernews", "remoteok") |
-| `company` | string | — | Filter by company name |
+| `platform` | string | — | Filter by source platform (e.g., "hackernews", "lever") |
 | `isRemote` | boolean | — | Filter to remote-only jobs (`true` or `false`) |
-| `sortBy` | string | "postedAt" | Sort by "postedAt", "scrapedAt", or "company" |
+| `sortBy` | string | "postedAt" | Sort by "postedAt" or "scrapedAt" |
 | `sortOrder` | string | "desc" | Sort order: "asc" or "desc" |
 
 ### Status
@@ -780,7 +779,7 @@ curl "https://job-scraper.replit.app/api/v1/locations" \
 | `location` | string | Job location string |
 | `count` | integer | Number of jobs in that location |
 
-### Open API
+### OpenAPI
 
 **Endpoint** 
 
