@@ -420,10 +420,9 @@ curl "https://job-scraper.replit.app/api/v1/locations" \
     ]
 }
 
-Note: The above example was truncated. Call the endpoint for the full list.
-
-
 ```
+
+Note: The above example was truncated. Call the endpoint for the full list.
 
 **Response Fields Explained:**
 
