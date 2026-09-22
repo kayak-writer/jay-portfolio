@@ -15,7 +15,7 @@ Job Finder collects job listings from across the web to highlight open roles tha
 
 ## Overview
 
-Job Finder aggregates technical writer, developer advocate, and Learning & Development (L&D) roles from across the web — Greenhouse, Ashby, Lever, HackerNews, and more. Find relevant positions without manually checking multiple job boards.
+Job Finder aggregates technical writer, developer advocate, and instructional designer roles from across the web — Greenhouse, Ashby, Lever, HackerNews, and more. Find relevant positions without manually checking multiple job boards.
 
 ## Base URL
 
