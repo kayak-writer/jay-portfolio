@@ -85,7 +85,7 @@ The following endpoints are available:
 | GET | `/api/v1/jobs/stats` | Display job totals and platform breakdown. | 
 | GET | `/api/v1/locations` | Display the number of jobs available in each location. |
 | GET | `/api/v1/status` | Check the aggregator's latest run. |
-| GET | `/api/v1/openapi.json` | Download the API definition. |
+| GET | `/api/v1/openapi.json` | Retrieve the API definition. |
 
 **Query Parameters:**
 
