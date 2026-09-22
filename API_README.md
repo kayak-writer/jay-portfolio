@@ -784,7 +784,7 @@ curl "https://job-scraper.replit.app/api/v1/locations" \
 
 **Endpoint** 
 
-Download the full OpenAPI 3.1.0 specification.
+Download the live API definition.
 
 ```bash
 curl "https://job-scraper.replit.app/api/v1/openapi.json" \
