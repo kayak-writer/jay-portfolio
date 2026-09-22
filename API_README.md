@@ -85,7 +85,7 @@ The following endpoints are available:
 | GET | `/api/v1/jobs/stats` | Display job totals and platform breakdown. | 
 | GET | `/api/v1/locations` | Display the number of jobs available in each location. |
 | GET | `/api/v1/status` | Check the aggregator's latest run. |
-| GET | `/api/v1/openapi.json` | Retrieve the API definition. |
+| GET | `/api/v1/openapi.json` | Download the live API definition. |
 
 **Query Parameters:**
 
@@ -232,9 +232,9 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 
 ### Stats
 
-Get job listing statistics and breakdowns.
-
 **Endpoint** 
+
+Get job listing statistics and breakdowns.
 
 ```bash
 curl "https://job-scraper.replit.app/api/v1/jobs/stats" \
@@ -1460,8 +1460,14 @@ curl "https://job-scraper.replit.app/api/v1/openapi.json" \
 
 **Response Fields Explained**
 
-Returns the full OpenAPI 3.1.0 specification document for the API.
-This can be imported into Postman, Swagger UI, or other API tools for interactive documentation and testing.
+| Field | Type | Description |
+|-------|------|-------------|
+| `openapi` | string | OpenAPI specification version (e.g., "3.1.0") |
+| `info` | object | API metadata, including title, version, and description |
+| `servers` | array | Base URL(s) the API is served from |
+| `security` | array | Global authentication requirements for the API |
+| `paths` | object | All available endpoints, their parameters, and response schemas |
+| `components` | object | Reusable schema definitions referenced throughout `paths` |
 
 ## Errors
 
