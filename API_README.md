@@ -103,7 +103,7 @@ The following endpoints are available:
 
 ### Status
 
-**Endpoint** 
+**Endpoint:** 
 
 Check the scraper status and database metadata.
 
@@ -112,7 +112,7 @@ curl "https://job-scraper.replit.app/api/v1/status" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
-**Response**
+**Response:**
 
 ```json
 
@@ -127,7 +127,7 @@ curl "https://job-scraper.replit.app/api/v1/status" \
 
 ```
 
-**Response Fields Explained**
+**Response Fields Explained*:*
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -140,7 +140,7 @@ curl "https://job-scraper.replit.app/api/v1/status" \
 
 ### Jobs
 
-**Endpoint** 
+**Endpoint:** 
 
 Retrieve and filter current job listings.
 
@@ -149,7 +149,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
-**Response**
+**Respons:e**
 
 ```json
 {
@@ -213,7 +213,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 }
 ```
 
-**Response Fields Explained**
+**Response Fields Explained:**
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -232,7 +232,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 
 ### Stats
 
-**Endpoint** 
+**Endpoint:** 
 
 Get job listing statistics and breakdowns.
 
@@ -241,7 +241,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs/stats" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
-**Response**
+**Response:**
 
 ```json
 
@@ -353,7 +353,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs/stats" \
 
 ```
 
-**Response Fields Explained**
+**Response Fields Explained:**
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -365,7 +365,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs/stats" \
 
 ### Locations
 
-**Endpoint** 
+**Endpoint:** 
 
 Get all locations with available jobs.
 
@@ -374,7 +374,7 @@ curl "https://job-scraper.replit.app/api/v1/locations" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
-**Response**
+**Response:**
 
 ```json
 
@@ -782,7 +782,7 @@ curl "https://job-scraper.replit.app/api/v1/locations" \
 
 ### OpenAPI
 
-**Endpoint** 
+**Endpoint:** 
 
 Download the live API definition.
 
@@ -790,7 +790,7 @@ Download the live API definition.
 curl "https://job-scraper.replit.app/api/v1/openapi.json" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
-**Response**
+**Response:**
 
 ``` json
 
@@ -1458,7 +1458,7 @@ curl "https://job-scraper.replit.app/api/v1/openapi.json" \
 
 ```
 
-**Response Fields Explained**
+**Response Fields Explained:**
 
 | Field | Type | Description |
 |-------|------|-------------|
