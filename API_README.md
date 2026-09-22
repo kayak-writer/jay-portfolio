@@ -81,11 +81,11 @@ The following endpoints are available:
 
 | Method | Endpoint | Purpose |
 | --- | --- | --- |
-| GET | `/api/v1/jobs` | Retrieve and filter current job listings. |
-| GET | `/api/v1/jobs/stats` | Display job totals and platform breakdown. | 
-| GET | `/api/v1/locations` | Display the number of jobs available in each location. |
-| GET | `/api/v1/status` | Check the aggregator's latest run. |
-| GET | `/api/v1/openapi.json` | Download the live API definition. |
+| GET | `/api/v1/jobs` | Retrieve and filter current job listings |
+| GET | `/api/v1/jobs/stats` | Display job totals and platform breakdown | 
+| GET | `/api/v1/locations` | Display the number of jobs available in each location |
+| GET | `/api/v1/status` | Check the aggregator's latest run |
+| GET | `/api/v1/openapi.json` | Download the live API definition |
 
 **Query Parameters:**
 
@@ -1473,11 +1473,11 @@ curl "https://job-scraper.replit.app/api/v1/openapi.json" \
 
 | Status Code | Error Code | Meaning |
 | --- | --- | --- |
-| 400 | `INVALID_QUERY` | One or more query parameters are invalid. |
-| 401 | `UNAUTHORIZED` | A valid API key is required. |
-| 404 | `NOT_FOUND` | The requested public API endpoint does not exist. | 
-| 429 | `RATE_LIMITED` | The rate limit was exceeded. | 
-| 500 | `INTERNAL_ERROR` | An unexpected server-side error occurred. | 
+| 400 | `INVALID_QUERY` | One or more query parameters are invalid |
+| 401 | `UNAUTHORIZED` | A valid API key is required |
+| 404 | `NOT_FOUND` | The requested public API endpoint does not exist | 
+| 429 | `RATE_LIMITED` | The rate limit was exceeded | 
+| 500 | `INTERNAL_ERROR` | An unexpected server-side error occurred | 
 
 **Example:**
 
