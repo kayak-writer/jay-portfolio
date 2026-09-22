@@ -19,7 +19,7 @@ Job Finder aggregates technical writing, developer advocate, and Learning & Deve
 
 ## Base URL
 
-https://job-scraper.replit.app
+`https://job-scraper.replit.app`
 
 ## Authentication
 
