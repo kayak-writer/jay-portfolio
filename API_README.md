@@ -127,7 +127,7 @@ curl "https://job-scraper.replit.app/api/v1/status" \
 
 ```
 
-**Response Fields Explained*:*
+**Response Fields Explained*:**
 
 | Field | Type | Description |
 |-------|------|-------------|
