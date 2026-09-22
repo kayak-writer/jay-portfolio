@@ -99,6 +99,7 @@ The following endpoints are available:
 | `isRemote` | boolean | — | Filter to remote-only jobs (`true` or `false`) |
 | `sortBy` | string | "postedAt" | Sort by "postedAt" or "scrapedAt" |
 | `sortOrder` | string | "desc" | Sort order: "asc" or "desc" |
+| `keyword` | string | — | Filter by keyword |`
 
 ### Status
 
