@@ -773,7 +773,7 @@ curl "https://job-scraper.replit.app/api/v1/locations" \
 
 ```
 
-**Response Fields Explained**
+**Response Fields Explained:**
 
 | Field | Type | Description |
 |-------|------|-------------|
