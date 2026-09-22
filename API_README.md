@@ -15,7 +15,7 @@ Job Finder collects job listings from across the web to highlight open roles tha
 
 ## Overview
 
-Job Finder aggregates technical writing, developer advocate, and Learning & Development (L&D) roles from across the web — Greenhouse, Ashby, Lever, HackerNews, and more. Find relevant positions without manually checking multiple job boards.
+Job Finder aggregates technical writer, developer advocate, and Learning & Development (L&D) roles from across the web — Greenhouse, Ashby, Lever, HackerNews, and more. Find relevant positions without manually checking multiple job boards.
 
 ## Base URL
 
@@ -23,7 +23,7 @@ Job Finder aggregates technical writing, developer advocate, and Learning & Deve
 
 ## Authentication
 
-The API uses API-key authentication.
+The API uses API key authentication.
 
 `X-API-Key: YOUR_API_KEY`
 
@@ -156,7 +156,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
     "jobs": [
         {
             "id": 338,
-            "title": "Technical Writer ",
+            "title": "Technical Writer",
             "company": "deepnote",
             "platform": "ashby",
             "location": "Remote — USA",
