@@ -149,7 +149,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
-**Respons:e**
+**Response:**
 
 ```json
 {
