@@ -25,9 +25,9 @@ This help center page highlights a report available within complex financial mar
 
 [Cellular Infrastructure Shipments](Cellular_Infrastructure_Shipments_OA_Page.pdf)
 
-## Job Finder API
+## Job Finder API Guide
 
-I created an API with Replit's AI agent to aggregate job listings for technical writing, developer relations, and related roles. 
+This guide covers an API with Replit's AI agent to aggregate job listings for technical writing, developer relations, and related roles. 
 
 [Job Finder API README](https://kayak-writer.github.io/api-docs/#/)
 
