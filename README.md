@@ -29,12 +29,5 @@ This help center page highlights a report available within complex financial mar
 
 I created an API with Replit's AI agent to aggregate job listings for technical writing, developer relations, and related roles. 
 
-[Job Finder API README](API_README.md)
+[Job Finder API README](https://kayak-writer.github.io/api-docs/#/)
 
-## Chase The Split Docs
-
-I built Chase The Split to analyze my workouts by creating charts and tables out of my logbook from my Concept2 rowing data. I coded the app with Replit's AI agent and built a knowledge base using static GitHub Pages and Docusaurus.
-
-[Chase The Split README](CTS_README.md) 
-
-[Chase The Split Docs: Connect to Concept2 Logbook](https://docs.chasethesplit.com/docs/getting-started/connect-to-concept2-logbook)
