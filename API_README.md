@@ -525,7 +525,7 @@ curl "https://job-scraper.replit.app/api/v1/openapi.json" \
 
 ```
 
-The full OpenAPI document — including all five paths, complete parameter lists, and every response schema — is available live at GET /api/v1/openapi.json.
+The full OpenAPI document — including all five paths, complete parameter lists, and every response schema — is available live at `GET /api/v1/openapi.json.`
 
 **Response Fields Explained:**
 
