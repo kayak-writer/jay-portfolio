@@ -1,6 +1,6 @@
 # RowFinder
 
-RowFinder lists hotel fitness centers that have rowing machines, including Concept2 and Hydrow ergs.
+RowFinder lists hotel fitness centers that have rowing machines, including ergs from Concept2 and Hydrow. These manufacturers have their own directories, but they only list locations that carry their brand. RowFinder is brand-agnostic, allowing rowers to find rowing machines from all brands in one directory.
 
 ## Index
 * [Overview](#overview)
@@ -14,7 +14,7 @@ RowFinder lists hotel fitness centers that have rowing machines, including Conce
 
 ## Overview
 
-RowFinder makes it easier to find hotels that have rowing machines by providing a single directory that is brand agnostic. 
+RowFinder makes it easier to find hotels that have rowing machines by providing a single directory that is brand agnostic. The directory includes data such as the number of ergs at a hotel and fitness center hours.
 
 ## Base Url
 
