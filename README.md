@@ -6,7 +6,7 @@ Welcome to my technical writing portfolio! I am a technical writer focused on do
 
 * [Product Announcements](#product-announcements)
 * [Help Center Page](#help-center-page)
-* [Job Finder API](#job-finder-api)
+* [Job Finder API Guide](#job-finder-api-guide)
 
 ## Product Announcements
 
