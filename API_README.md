@@ -1,6 +1,6 @@
 # Job Finder API
 
-Job Finder collects job listings from across the web to highlight open roles that meet specific requirements. Major job search websites do not list every job that employers post — and some of their listings might be out of date or closed. This tool solves these problems by surfacing job posts directly from employer websites.
+Job Finder collects job listings from across the web to highlight open roles that meet specific requirements. Major job search websites do not list every job that employers post — and some of their listings might be out of date or closed. This tool solves these problems by surfacing job posts directly from employer websites and HackerNews.
 
 ## Index
 * [Overview](#overview)
@@ -34,7 +34,7 @@ To request API access, contact the API owner at `jay@technicalwriting.io`. Keys 
 Make your first request:
 
 ```bash
-curl "https://job-scraper.replit.app/api/v1/jobs?" \
+curl "https://job-scraper.replit.app/api/v1/jobs" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
@@ -1744,7 +1744,7 @@ curl "https://job-scraper.replit.app/api/v1/openapi.json" \
 }
 ```
 
-The full OpenAPI document — including all five paths, complete parameter lists, and every response schema — is available live at `GET /api/v1/openapi.json.`
+The full OpenAPI document — including all five paths, complete parameter lists, and every response schema — is available live at `GET /api/v1/openapi.json`.
 
 **Response Fields Explained:**
 
