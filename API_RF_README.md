@@ -126,7 +126,7 @@ A successful response contains a hotels array:
 
 ```
 
-### Endpoints
+## Endpoints
 
 RowFinder allows you to retrieve listings of hotels with rowing machines, review statistics and location counts, check the listing status, and download the live API definition.
 
@@ -436,8 +436,8 @@ curl "https://rowfinder.xyz/api/v1/brands"
 
 | Field | Type | Description |
 | --- | --- | --- | 
-| `data.byBrand.brand` | string | Brand name (e.g., Concept 2 or Hydrow) |
-| `data.byBrand.total` | number | Total number of each brand of erg (e.g., Concept 2 or Hydrow) |
+| `data.brand` | string | Brand name (e.g., Concept 2 or Hydrow) |
+| `data.total` | number | Total number of each brand of erg (e.g., Concept 2 or Hydrow) |
 
 
 ### Cities
@@ -450,7 +450,7 @@ Retrieves the number of hotels listed in the directory in each city.
 curl "https://rowfinder.xyz/api/v1/cities"
 ```
 
-**Responses**
+**Response**
 
 ```json
 
