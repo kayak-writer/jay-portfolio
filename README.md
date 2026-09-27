@@ -7,6 +7,7 @@ Welcome to my technical writing portfolio! I am a technical writer focused on do
 * [Product Announcements](#product-announcements)
 * [Help Center Page](#help-center-page)
 * [Job Finder API Guide](#job-finder-api-guide)
+* [Row Finder API Guide](#row-finder-api-guide)
 
 ## Product Announcements
 
@@ -30,7 +31,7 @@ This guide covers an API with Replit's AI agent to aggregate job listings for te
 
 [Job Finder API README](https://kayak-writer.github.io/api-docs/#/)
 
-## RowFinder API Guide
+## Row Finder API Guide
 
 This guide covers an API with Replit's AI agent to create a rowing machine directory for hotels.
 
