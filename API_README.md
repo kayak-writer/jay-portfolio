@@ -1,4 +1,4 @@
-# Job Finder
+# Job Finder API
 
 Job Finder collects job listings from across the web to highlight open roles that meet specific requirements. Major job search websites do not list every job that employers post — and some of their listings might be out of date or closed. This tool solves these problems by surfacing job posts directly from employer websites.
 
@@ -854,7 +854,7 @@ curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&i
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | integer | Unique identifier for the job listing |
+| `id` | number | Unique identifier for the job listing |
 | `title` | string | Job title |
 | `company` | string | Company name |
 | `platform` | string | Source platform (e.g., Greenhouse, Ashby, or Lever) |
