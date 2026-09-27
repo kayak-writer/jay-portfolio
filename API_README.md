@@ -733,7 +733,7 @@ The following endpoints are available:
 | `searchTerm` | string | — | Filter by a parameter such as job title (e.g., "technical writing") |
 | `location` | string | — | Filter by location (e.g., "Remote", "New York, NY") |
 | `platform` | string | — | Filter by source platform (e.g., "hackernews", "lever") |
-| `isRemote` | boolean | — | Filter to remote-only jobs (`true` or `false`) |
+| `isRemote` | string | — | Filter to remote-only jobs (`true` or `false`) |
 | `sortBy` | string | "postedAt" | Sort by "postedAt" or "scrapedAt" |
 | `sortOrder` | string | "desc" | Sort order: "asc" or "desc" |
 | `keyword` | string | — | Filter by keyword |
