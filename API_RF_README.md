@@ -16,7 +16,7 @@ RowFinder lists hotel fitness centers that have rowing machines, including ergs 
 
 RowFinder makes it easier to find hotels that have rowing machines by providing a single directory that is brand agnostic. The directory includes data such as the number of ergs at a hotel and fitness center hours.
 
-## Base Url
+## Base URL
 
 https://rowfinder.xyz
 
@@ -132,7 +132,7 @@ RowFinder allows you to retrieve listings of hotels with rowing machines, review
 
 The following endpoints are available:
 
-* [Health](#healthz)
+* [Health](#health)
 * [Hotels](#hotels)
 * [Stats](#stats)
 * [Brands](#brands)
@@ -371,7 +371,7 @@ curl "https://rowfinder.xyz/api/v1/stats"
 
 **Endpoint**
 
-Retrieves statistics for the listing of hotels.
+Retrieves the number of rowing machines listed in the directory from each brand.
 
 ```bash
 curl "https://rowfinder.xyz/api/v1/brands"
@@ -444,7 +444,7 @@ curl "https://rowfinder.xyz/api/v1/brands"
 
 **Endpoint**
 
-Retrieves statistics for the listing of hotels.
+Retrieves the number of hotels listed in the directory in each city.
 
 ```bash
 curl "https://rowfinder.xyz/api/v1/cities"
@@ -511,7 +511,7 @@ IPs are limited to 120 requests per minute. If you exceed this limit, the API re
 
 ## Data Freshness
 
-New listings display as soon as a listing is approved. Use `GET /api/v1/healthz` to check the latest run.
+New listings display as soon as a listing is approved.
 
 ## Contact
 
