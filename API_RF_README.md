@@ -153,7 +153,7 @@ The following endpoints are available:
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | `search` | string | - | Filter city names |
-| `page` | integer | - | Page number; defaults to `1` |
+| `page` | integer | - | Page number; defaults to `20` |
 | `limit` | integer | - | 	Results per page; defaults to `20`, maximum `100` |
 
 ### Health
@@ -363,9 +363,9 @@ curl "https://rowfinder.xyz/api/v1/stats"
 | Field | Type | Description |
 | --- | --- | --- | 
 | `data.total` | number | Total number of approved hotels |
-| `cities` | number | Total number of cities covered |
-| `brand` | string | Brand name of erg (e.g., Concept 2 or Hydrow) |
-| `byBrand.total` | number | Total number of each brand (e.g., Concept 2 or Hydrow) |
+| `data.cities` | number | Total number of cities covered |
+| `data.byBrand.brand` | string | Brand name of erg (e.g., Concept 2 or Hydrow) |
+| `data.byBrand.total` | number | Total number of each brand (e.g., Concept 2 or Hydrow) |
 
 ### Brands
 
@@ -494,7 +494,7 @@ curl "https://rowfinder.xyz/api/v1/cities"
 | Field | Type | Description |
 | --- | --- | --- | 
 | `data.city` | string | City name |
-| `data.total` | number | Total number of listed ergs in each city |
+| `data.total` | number | Total number of listed hotels in each city |
 
 ## Errors
 
