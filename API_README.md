@@ -782,7 +782,7 @@ curl "https://job-scraper.replit.app/api/v1/status" \
 Retrieve and filter current job listings.
 
 ```bash
-curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=5" \
+curl "https://job-scraper.replit.app/api/v1/jobs?searchTerm=technical%20writer&isRemote=true&pageSize=50" \
 -H "X-API-Key: YOUR_API_KEY"
 ```
 
