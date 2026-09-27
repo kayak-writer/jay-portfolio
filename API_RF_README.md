@@ -153,8 +153,8 @@ The following endpoints are available:
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | `search` | string | - | Filter city names |
-| `page` | integer | - | Page number; defaults to `20` |
-| `limit` | integer | - | 	Results per page; defaults to `20`, maximum `100` |
+| `page` | integer | 1 | Page number; defaults to `1` |
+| `limit` | integer | 20 | 	Results per page; defaults to `20`, maximum `100` |
 
 ### Health
 
@@ -436,8 +436,8 @@ curl "https://rowfinder.xyz/api/v1/brands"
 
 | Field | Type | Description |
 | --- | --- | --- | 
-| `data.brand` | string | Brand name (e.g., Concept 2 or Hydrow) |
-| `data.total` | number | Total number of each brand of erg (e.g., Concept 2 or Hydrow) |
+| `data.byBrand.brand` | string | Brand name (e.g., Concept 2 or Hydrow) |
+| `data.byBrand.total` | number | Total number of each brand of erg (e.g., Concept 2 or Hydrow) |
 
 
 ### Cities
