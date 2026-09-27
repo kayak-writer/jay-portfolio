@@ -1,6 +1,6 @@
 # Job Finder API
 
-Job Finder collects job listings from across the web to highlight open roles that meet specific requirements. Major job search websites do not list every job that employers post — and some of their listings might be out of date or closed. This tool solves these problems by surfacing job posts directly from employer websites and Hacker News.
+Job Finder collects job listings from across the web to highlight open roles that meet specific requirements. Major job search websites do not list every job that employers post — and some of their listings might be out of date or closed. This tool solves these problems by surfacing job posts directly from employer websites and niche sites like Hacker News.
 
 ## Index
 * [Overview](#overview)
