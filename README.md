@@ -29,13 +29,13 @@ This help center page highlights a report available within complex financial mar
 
 This guide covers an API with Replit's AI agent to aggregate job listings for technical writing, developer relations, and related roles. 
 
-[Job Finder API README](https://kayak-writer.github.io/api-docs/#/)
+[Job Finder API Guide](https://kayak-writer.github.io/api-docs/#/)
 
 ## Row Finder API Guide
 
 This guide covers an API with Replit's AI agent to create a rowing machine directory for hotels.
 
-[Row Finder API README](https://kayak-writer.github.io/api-docs-erg/#/)
+[Row Finder API README Guide](https://kayak-writer.github.io/api-docs-erg/#/)
 
 
 
