@@ -30,3 +30,11 @@ This guide covers an API with Replit's AI agent to aggregate job listings for te
 
 [Job Finder API README](https://kayak-writer.github.io/api-docs/#/)
 
+## RowFinder API Guide
+
+This guide covers an API with Replit's AI agent to create a rowing machine directory for hotels.
+
+[Row Finder API README](https://kayak-writer.github.io/api-docs-erg/#/)
+
+
+
